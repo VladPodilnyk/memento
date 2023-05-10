@@ -11,7 +11,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="header">
       <h4>wins: {wins}</h4>
       <h3>Memento Game</h3>
-      <button onClick={onReset}>New game</button>
+      <button onClick={onReset}>Reset</button>
     </header>
   );
 };

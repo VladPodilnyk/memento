@@ -13,7 +13,7 @@ export const CardComponent: React.FC<CardComponentProps> = ({
     <div className="card">
       <div className={selected ? 'selected' : ''}>
         <img alt="" src={image} className="card-face" />
-        <img alt="" src={'/assets/cactus.png'} className="card-back" onClick={onClick}/>
+        <img alt="" src={'/assets/chinese-coin.png'} className="card-back" onClick={onClick}/>
       </div>
     </div>
   );

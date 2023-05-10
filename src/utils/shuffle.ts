@@ -1,14 +1,14 @@
 import { Card } from '../domain/Card';
 
 export const IMAGES = [
-  '/assets/daisy-in-jar.png',
-  '/assets/daisy-in-jar.png',
-  '/assets/daisy-in-jar.png',
-  '/assets/daisy-in-jar.png',
-  '/assets/mini-cactus.png',
-  '/assets/mini-cactus.png',
-  '/assets/mini-cactus.png',
-  '/assets/mini-cactus.png',
+  '/assets/barongsai.png',
+  '/assets/chinese-hat.png',
+  '/assets/chinese-symbol.png',
+  '/assets/dragon-boat-festival.png',
+  '/assets/gong.png',
+  '/assets/paddles.png',
+  '/assets/tea-egg.png',
+  '/assets/kite.png',
 ];
 
 export const shuffle = <T>(values: T[]): T[] => {

@@ -6,7 +6,6 @@ warning in VSCode,change the css.lint.unknownAtRules setting to ignore. */
   --text: #f66936;
   --card: #202426;
   --orange: #ffa200;
-  --bg: linear-gradient(135deg, #fc2473, #f66936);
 
   --delay: 200ms;
   --rotate-0: rotateY(0deg);
@@ -41,7 +40,7 @@ body {
   display: flex;
   overflow: auto;
   color: var(--text);
-  background: var(--bg);
+  background: url('../public/assets/bg.jpeg');
   align-items: flex-start;
   justify-content: center;
   font-family: var(--font-family);
@@ -71,8 +70,11 @@ h4 {
 button {
   border: none;
   outline: none;
-  padding: 0.5rem;
-  border-radius: 3px;
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  color:white;
+  font-weight: bold;
+  background-color: var(--orange);
   margin: auto;
 }
 
