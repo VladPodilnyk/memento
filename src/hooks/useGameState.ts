@@ -18,13 +18,16 @@ const updateMatchedImages = (cards: Card[], image: string) => {
 const TIMEOUT = 1000;
 
 export const useGameState = () => {
-  const [cards, setCards] = useState(randomCards);
+  const [cards, setCards] = useState(randomCards());
 
   // our two consecutive choices
   const [pickOne, setPickOne] = useState<Card>();
   const [pickTwo, setPickTwo] = useState<Card>();
 
-  const [wins, setWins] = useState(0);
+  const [wins, setWins] = useState(() => {
+    const wins = localStorage.getItem('wins');
+    return wins ? parseInt(wins, 10) : 0;
+  });
 
   // prevent clicking on cards during animation
   const [disabled, setDisabled] = useState(false);
@@ -51,7 +54,7 @@ export const useGameState = () => {
 
   const onNewGame = useCallback(() => {
     handleTurn();
-    setCards(shuffle);
+    setCards(randomCards());
     setWins(0);
   }, [handleTurn]);
 
@@ -76,7 +79,11 @@ export const useGameState = () => {
     const matchedCards = cards.filter((card) => !card?.matched);
     if (matchedCards.length === 0) {
       console.log('You win!');
-      setWins((wins) => wins + 1);
+      setWins((wins) => {
+        const updatedCounter = wins + 1;
+        localStorage.setItem('wins', updatedCounter.toString());
+        return updatedCounter;
+      });
       timer = setTimeout(() => {
         handleTurn();
         shuffleCards();

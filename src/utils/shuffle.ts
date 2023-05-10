@@ -16,10 +16,12 @@ export const shuffle = <T>(values: T[]): T[] => {
     .sort(() => Math.random() - 0.5);
 };
 
-export const randomCards: Card[] = shuffle(IMAGES).map((image) => {
-  return {
-    id: Math.random(),
-    image,
-    matched: false,
-  };
-});
+export const randomCards: () => Card[] = () => {
+  return shuffle(IMAGES).map((image) => {
+    return {
+      id: Math.random(),
+      image,
+      matched: false,
+    };
+  });
+};
